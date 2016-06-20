@@ -1,0 +1,10 @@
+#GRAPHIC 3
+png("plot3.png", width=480, height=480)
+dtSub_metering_1 <-as.numeric(dtSub$Sub_metering_1)
+dtSub_metering_2 <-as.numeric(dtSub$Sub_metering_2)
+dtSub_metering_3 <-as.numeric(dtSub$Sub_metering_3)
+plot(datetime, dtSub_metering_1, type="l", xlab="", ylab="Energy sub Metering")
+lines(datetime, dtSub_metering_2, type="l", col="red")
+lines(datetime, dtSub_metering_3, type="l", col="blue")
+legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, lwd=2.5, col=c("black", "red", "blue"))
+dev.off()
